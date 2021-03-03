@@ -1,3 +1,16 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.nav-bar{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li{
+  list-style: none;
+}
+
+.home, .signup-link{
+  text-decoration: none;
+}
