@@ -1,2 +1,58 @@
-h1 {font-family: 'Cormorant Garamond', serif;
+.login-form-container {
+    width: 400px;
+    height: 500px;
+}
+
+.login-form {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 70px auto;
+}
+
+.login-header {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.login-errors {
+    position: absolute;
+    top: 145px;
+    color: red;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-field {
+    height: 25px;
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 26px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.login-field::placeholder {
+    text-align: center;
+    font-family: 'Cormorant Garamond', 'serif';
+    font-size: 26px;
+    font-weight: 600;
+    /* color: grey; */
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.login-button {
+    width: 120px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
