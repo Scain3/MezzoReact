@@ -7,13 +7,18 @@ function LoginFormModal() {
 	const [showModal, setShowModal] = useState(false);
 	const [signup, setSignup] = useState(true);
 
+	const onClose = () => {
+		setSignup(true);
+		setShowModal(false);
+	}
+
 	return (
 		<>
 			<button className="login-modal-button" onClick={() => setShowModal(true)}>
 				Sign Up
 			</button>
 			{showModal && (
-				<Modal onClose={() => setShowModal(false)}>
+				<Modal onClose={onClose}>
 					{signup ? (
 						<SignupForm setSignup={setSignup} />
 					) : (
