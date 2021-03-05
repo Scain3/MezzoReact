@@ -22,7 +22,7 @@
 
 .login-errors {
     position: absolute;
-    top: 145px;
+    top: 125px;
     color: red;
     text-align: center;
     display: flex;
@@ -35,7 +35,7 @@
     width: 250px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 26px;
+    font-size: 18px;
     text-align: center;
     border: 1px solid black;
 }
@@ -51,6 +51,16 @@
 .login-button {
     width: 120px;
     height: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-modal-button {
+    width: 90px;
+    height: 30px;
     color: white;
     background-color: black;
     border: none;
