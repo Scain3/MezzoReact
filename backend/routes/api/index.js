@@ -44,6 +44,6 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.user('/stories', storiesRouter);
+router.use('/stories', storiesRouter);
 
 module.exports = router;
