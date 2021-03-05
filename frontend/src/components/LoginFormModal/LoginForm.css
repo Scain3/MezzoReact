@@ -1,6 +1,7 @@
 .login-form-container {
     width: 400px;
     height: 500px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
 }
 
 .login-form {
@@ -15,6 +16,7 @@
 .login-header {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    margin: 0 auto;
     padding-top: 80px;
 }
 
@@ -43,7 +45,6 @@
     font-family: 'Cormorant Garamond', 'serif';
     font-size: 26px;
     font-weight: 600;
-    /* color: grey; */
     color: rgba(0, 0, 0, 0.6);
 }
 

@@ -22,9 +22,6 @@ function App() {
           <ProtectedRoute path="/test">
             <h1>Hello</h1>
           </ProtectedRoute>
-          <Route path="/login" >
-            <LoginFormPage />
-          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
