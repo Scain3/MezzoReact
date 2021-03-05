@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
 
-function SignupFormPage() {
+function SignupFormPage({ setSignup }) {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector((state) => state.session.user);
 	const [firstName, setFirstName] = useState("");
@@ -32,6 +32,7 @@ function SignupFormPage() {
 	};
 
 	return (
+		<>
 		<div className="signup-form-container">
 			<h1>Sign Up</h1>
 			<form onSubmit={handleSubmit}>
@@ -96,8 +97,10 @@ function SignupFormPage() {
 					</label>
 				</div>
 				<button type="submit">Sign Up</button>
+				<p className="form-account-prompt">Already have an account? <span className="login-link" onClick={() => setSignup(false)}>Click here</span></p>
 			</form>
 		</div>
+		</>
 	);
 }
 

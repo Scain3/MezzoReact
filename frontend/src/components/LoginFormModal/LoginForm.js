@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
+import SignupForm from "../SignupFormModal/SignupForm";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-function LoginForm() {
+function LoginForm( {setSignup}) {
 	const dispatch = useDispatch();
 	const [credential, setCredential] = useState("");
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState([]);
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -20,6 +22,7 @@ function LoginForm() {
 	};
 
 	return (
+		<>
 		<div className="login-form-container">
 			<h1 className="login-header">Welcome Back.</h1>
 			<form className="login-form" onSubmit={handleSubmit}>
@@ -47,8 +50,10 @@ function LoginForm() {
 					/>
 				</div>
 				<button className="login-button" type="submit">Log In</button>
+				<p className="form-account-prompt">No account? <span onClick={() => setSignup(true)} className="login-link"> Create one</span></p>
 			</form>
 		</div>
+		</>
 	);
 }
 

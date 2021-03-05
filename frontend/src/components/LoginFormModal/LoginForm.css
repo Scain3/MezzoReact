@@ -1,11 +1,11 @@
 .login-form-container {
     width: 400px;
-    height: 500px;
+    height: 520px;
     box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
 }
 
 .login-form {
-    height: 220px;
+    height: 290px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,9 +31,9 @@
 }
 
 .login-field {
-    height: 25px;
+    height: 20px;
     width: 250px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 10px;
     font-size: 18px;
     text-align: center;
@@ -42,9 +42,8 @@
 
 .login-field::placeholder {
     text-align: center;
-    font-family: 'Cormorant Garamond', 'serif';
+    font-family: 'Roboto', sans-serif;
     font-size: 26px;
-    font-weight: 600;
     color: rgba(0, 0, 0, 0.6);
 }
 
@@ -65,5 +64,15 @@
     background-color: black;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-account-prompt {
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-link {
+    color: green;
+    font-weight: 600;
     cursor: pointer;
 }
