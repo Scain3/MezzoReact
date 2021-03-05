@@ -24,14 +24,14 @@ function LoginForm( {setSignup}) {
 	return (
 		<>
 		<div className="login-form-container">
-			<h1 className="login-header">Welcome Back.</h1>
+			<h1 className="form-header">Welcome Back.</h1>
 			<form className="login-form" onSubmit={handleSubmit}>
 				<p className="login-errors">
 					{errors[0]}
 				</p>
 				<div>
 					<input
-						className="login-field"
+						className="auth-form-field"
 						type="text"
 						placeholder="email"
 						value={credential}
@@ -41,7 +41,7 @@ function LoginForm( {setSignup}) {
 				</div>
 				<div>
 					<input
-						className="login-field"
+						className="auth-form-field"
 						type="password"
 						placeholder="password"
 						value={password}
@@ -49,7 +49,7 @@ function LoginForm( {setSignup}) {
 						required
 					/>
 				</div>
-				<button className="login-button" type="submit">Log In</button>
+				<button className="auth-submit-button" type="submit">Log In</button>
 				<p className="form-account-prompt">No account? <span onClick={() => setSignup(true)} className="login-link"> Create one</span></p>
 			</form>
 		</div>

@@ -1,0 +1,14 @@
+.signup-form-container {
+	width: 450px;
+	height: 775px;
+	box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+}
+
+.signup-form {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px auto;
+}

@@ -13,11 +13,12 @@
     margin: 70px auto;
 }
 
-.login-header {
+.form-header {
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
     margin: 0 auto;
     padding-top: 80px;
+    font-size: 28pt;
 }
 
 .login-errors {
@@ -30,24 +31,25 @@
     justify-content: center;
 }
 
-.login-field {
+.auth-form-field {
     height: 20px;
     width: 250px;
-    padding-top: 15px;
+    padding-top: 18px;
     padding-bottom: 10px;
     font-size: 18px;
     text-align: center;
     border: 1px solid black;
+    border-radius: 2px;
 }
 
-.login-field::placeholder {
+.auth-form-field::placeholder {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 26px;
+    font-size: 24px;
     color: rgba(0, 0, 0, 0.6);
 }
 
-.login-button {
+.auth-submit-button {
     width: 120px;
     height: 40px;
     color: white;
