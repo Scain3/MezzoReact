@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {useSelector, useDispatch} from "react-redux"
-import { getTrendingStories } from "../../store/trending"
+import { getTrendingStories } from "../../store/trending";
+
+import TrendingPreview from "./TrendingPreview"
 
 const TrendingStories = () => {
     const [loaded, setLoaded] = useState(false);
@@ -12,12 +14,12 @@ const TrendingStories = () => {
             await dispatch(getTrendingStories());
             return setLoaded(true);
         })()
-    }, [])
+    }, [dispatch])
 
     return loaded && (
         <>
             <p>Trending</p>
-            {articles.map(article => (<p>{article.story.title}</p>))}
+            {articles.map((story, i) => (<TrendingPreview key={i} article={story} rank={i + 1} />))}
         </>
     );
 };
