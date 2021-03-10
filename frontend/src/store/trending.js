@@ -8,8 +8,8 @@ const setTrending = (stories) => ({
 });
 
 export const getTrendingStories = () => async (dispatch) => {
-    const res = await fetch('/api/stories/trending');
-    dispatch(setTrending(res));
+    const res = await fetch('/api/stories/trending', {method: 'GET'});
+    dispatch(setTrending(res.data));
     return res;
 };
 
