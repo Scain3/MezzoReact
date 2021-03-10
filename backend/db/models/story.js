@@ -39,6 +39,11 @@ module.exports = (sequelize, DataTypes) => {
 			onDelete: "cascade",
 			hooks: true,
 		});
+		Story.hasMany(models.Clap, {
+			foreignKey: "storyId",
+			onDelete: "cascade",
+			hooks: true,
+		})
 	};
 	return Story;
 };
