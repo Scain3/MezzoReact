@@ -4,7 +4,15 @@ const asyncHandler = require("express-async-handler");
 
 const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
-const { Story, User, Like, Comment, Follow, Clap, sequelize } = require("../../db/models");
+const {
+	Story,
+	User,
+	Like,
+	Comment,
+	Follow,
+	Clap,
+	sequelize,
+} = require("../../db/models");
 
 const router = express.Router();
 
@@ -119,12 +127,27 @@ router.post(
 router.get(
 	"/trending",
 	asyncHandler(async (req, res) => {
-    const mostClapped = await Clap.findAll({
+		const mostClapped = await Clap.findAll({
 			attributes: ["storyId", [sequelize.literal('COUNT("storyId")'), "claps"]],
 			group: "storyId",
-      limit: 6,
+			limit: 6,
 			order: [[sequelize.literal("claps"), "DESC"]],
 		});
-    res.json(mostClapped);
+
+		// const stories = await mostClapped.map(async (clap) => {
+		// 	clap.story = await Story.findByPk(clap.storyId);
+		// 	return clap;
+		// 	// console.log(clap)
+		// });
+
+		const stories = await Promise.all(mostClapped.map(async (story) => {
+			story.dataValues.story = await Story.findByPk(story.storyId);
+			// story.claps = story.claps;
+			return story;
+		}))
+
+		console.log("STORIES", stories);
+
+		res.json(stories);
 	})
 );
