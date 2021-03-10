@@ -18,6 +18,9 @@ module.exports = {
 			{ userId: 1, storyId: 5, createdAt: new Date(), updatedAt: new Date() },
 			{ userId: 1, storyId: 5, createdAt: new Date(), updatedAt: new Date() },
 			{ userId: 1, storyId: 5, createdAt: new Date(), updatedAt: new Date() },
+			{ userId: 1, storyId: 6, createdAt: new Date(), updatedAt: new Date() },
+			{ userId: 1, storyId: 6, createdAt: new Date(), updatedAt: new Date() },
+			{ userId: 1, storyId: 7, createdAt: new Date(), updatedAt: new Date() },
 		]);
 	},
 

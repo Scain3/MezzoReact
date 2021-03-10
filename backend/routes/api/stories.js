@@ -122,6 +122,7 @@ router.get(
     const mostClapped = await Clap.findAll({
 			attributes: ["storyId", [sequelize.literal('COUNT("storyId")'), "claps"]],
 			group: "storyId",
+      limit: 6,
 			order: [[sequelize.literal("claps"), "DESC"]],
 		});
     res.json(mostClapped);
