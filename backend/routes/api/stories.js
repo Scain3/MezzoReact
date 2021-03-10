@@ -127,6 +127,8 @@ router.post(
 router.get(
 	"/trending",
 	asyncHandler(async (req, res) => {
+		// sequelize.literal will allow us to count the number of claps each story has.
+		// Sorting in descending order and limiting to 6 results for top stories.
 		const mostClapped = await Clap.findAll({
 			attributes: ["storyId", [sequelize.literal('COUNT("storyId")'), "claps"]],
 			group: "storyId",
@@ -134,6 +136,8 @@ router.get(
 			order: [[sequelize.literal("claps"), "DESC"]],
 		});
 
+		// Promise.all stops pending promises being returned.
+		// Find the story by ID, get author info, and append new data to the dataValues object.
 		const stories = await Promise.all(
 			mostClapped.map(async (story) => {
 				story.dataValues.story = await Story.findByPk(story.storyId, {

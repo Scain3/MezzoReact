@@ -6,9 +6,9 @@ const TrendingPreview = ({ article, rank }) => {
     const lastName = article.story.User.lastName;
     return (
         <div className="trending-preview-container">
-            <p>{rank}</p>
-            <p>{article.story.title}</p>
+            <p>{`0${rank}`}</p>
             <p>{`${firstName} ${lastName}`}</p>
+            <p>{article.story.title}</p>
         </div>
     );
 };
