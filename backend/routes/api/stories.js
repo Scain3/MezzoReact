@@ -134,10 +134,14 @@ router.get(
 			order: [[sequelize.literal("claps"), "DESC"]],
 		});
 
-		const stories = await Promise.all(mostClapped.map(async (story) => {
-			story.dataValues.story = await Story.findByPk(story.storyId);
-			return story;
-		}))
+		const stories = await Promise.all(
+			mostClapped.map(async (story) => {
+				story.dataValues.story = await Story.findByPk(story.storyId, {
+					include: [{ model: User, attributes: ["firstName", "lastName"] }],
+				});
+				return story;
+			})
+		);
 
 		res.json(stories);
 	})

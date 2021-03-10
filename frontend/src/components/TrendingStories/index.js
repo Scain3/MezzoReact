@@ -4,7 +4,7 @@ import { getTrendingStories } from "../../store/trending"
 
 const TrendingStories = () => {
     const [loaded, setLoaded] = useState(false);
-    // const stories = useSelector(state => state.trending.stories);
+    const articles = useSelector(state => state.trending.stories);
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -12,9 +12,14 @@ const TrendingStories = () => {
             await dispatch(getTrendingStories());
             return setLoaded(true);
         })()
-    })
+    }, [])
 
-    return loaded && (<p>Trending</p>)
+    return loaded && (
+        <>
+            <p>Trending</p>
+            {articles.map(article => (<p>{article.story.title}</p>))}
+        </>
+    );
 };
 
 export default TrendingStories;
