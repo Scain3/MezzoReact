@@ -1,0 +1,80 @@
+.login-form-container {
+    width: 400px;
+    height: 520px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+}
+
+.login-form {
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 70px auto;
+}
+
+.form-header {
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px;
+    font-size: 28pt;
+}
+
+.login-errors {
+    position: absolute;
+    top: 125px;
+    color: red;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-form-field {
+    height: 20px;
+    width: 250px;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.auth-form-field::placeholder {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.auth-submit-button {
+    width: 120px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-modal-button {
+    width: 90px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-account-prompt {
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-link {
+    color: green;
+    font-weight: 600;
+    cursor: pointer;
+}

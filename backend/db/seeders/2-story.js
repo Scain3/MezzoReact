@@ -68,6 +68,24 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					title: "Test 1",
+					subtitle: "testing",
+					content: `content`,
+					authorId: 2,
+					image: "https://media.giphy.com/media/H6ubTDWpYXEDJqYE4D/giphy.gif",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					title: "Test 2",
+					subtitle: "testing",
+					content: `content`,
+					authorId: 2,
+					image: "https://media.giphy.com/media/H6ubTDWpYXEDJqYE4D/giphy.gif",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);

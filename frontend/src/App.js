@@ -1,10 +1,16 @@
+// Packages
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-// import LoginFormPage from "./components/LoginFormPage";
-import * as sessionActions from "./store/session";
+
+// Components
+import ProtectedRoute from "./components/ProtectedRoute";
+import SignupFormPage from "./components/SignupFormModal/SignupForm";
 import Navigation from "./components/Navigation";
+import HomePage from "./components/HomePage";
+
+// Redux
+import * as sessionActions from "./store/session";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,11 +24,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
+          <ProtectedRoute path="/test">
+            <h1>Hello</h1>
+          </ProtectedRoute>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/">
+            <HomePage />
           </Route>
         </Switch>
       )}
