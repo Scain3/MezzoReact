@@ -5,6 +5,14 @@
 .nav-container{
   display: flex;
   justify-content: space-between;
+  background-color: #F4B800;
+  border-bottom: 2px solid black;
+}
+
+.home-link{
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 .nav-links{
@@ -14,4 +22,6 @@
 
 .login-modal-link, .signup-modal-link, .signup-link{
   margin-left: 20px;
+  height: 75px;
+  font-family: 'Cormorant Garamond', serif;
 }
