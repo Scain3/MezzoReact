@@ -23,9 +23,9 @@ function Navigation({ isLoaded }){
         <div className="signup-modal-link">
           <SignupFormModal />
         </div>
-        <div className="signup-link">
+        {/* <div className="signup-link">
           <NavLink to="/signup">Sign Up</NavLink>
-        </div>
+        </div> */}
       </div>
     );
   }
