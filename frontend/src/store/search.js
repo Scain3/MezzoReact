@@ -2,7 +2,7 @@ import {fetch} from './csrf.js';
 
 const SEARCH_STORIES = 'SEARCH_STORIES';
 
-const searchStories= (stories) => ({
+const searchStories = (stories) => ({
     type: SEARCH_STORIES,
     payload: stories
 })
@@ -10,10 +10,10 @@ const searchStories= (stories) => ({
 export const fetchSearchInfo = (term) => async(dispatch) => {
     const res = await fetch(`/api/search?term=${encodeURIComponent(term)}`)
 
-    const data = await res.json();
-    const story = data.stories;
+    // const data = await res.json();
+    // const story = data.stories;
 
-    dispatch(searchStories(story));
+    dispatch(searchStories(res.data.stories));
 }
 
 const initialState = {story: null};
