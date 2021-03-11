@@ -4,14 +4,14 @@
 
 .nav-container{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .nav-links{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .login-modal-link, .signup-modal-link, .signup-link{
-  margin-left: 50px;
+  margin-left: 20px;
 }
