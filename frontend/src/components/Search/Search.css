@@ -23,6 +23,7 @@
 
 .nav-search__input{
     border: none;
+    background-color: white;
 }
 
 .nav-search__submit{
