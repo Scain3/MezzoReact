@@ -9,6 +9,14 @@
   border-bottom: 2px solid black;
 }
 
+.authenticated-links{
+  display: flex;
+}
+
+.search-bar-div, .profile-button-div{
+  margin-left: 30px;
+}
+
 .home-link{
   font-family: 'Cormorant Garamond', serif;
   font-weight: bold;

@@ -1,0 +1,32 @@
+.nav-search__form{
+    background-color: white;
+}
+
+.search-page__divs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-page__img{
+    width: 291px;
+    height: 415px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.search-product-container{
+    margin: 30px;
+    cursor: pointer;
+}
+
+.nav-search__input{
+    border: none;
+}
+
+.nav-search__submit{
+    cursor: pointer;
+    background: none;
+    border: none;
+}

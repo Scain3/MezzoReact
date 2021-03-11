@@ -8,8 +8,6 @@ function SearchBar(){
                  placeholder="Search"
                  type="text"
                  name="term"
-                 onChange={(e) => setSearch(e.target.value)}
-                 value={search}
             />
             <button>
                 <i className="fas fa-search fa-lg"></i>
