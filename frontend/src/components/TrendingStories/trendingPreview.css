@@ -2,5 +2,23 @@
     border: 1px solid black;
     margin: 5px;
     padding: 5px;
-    width: 350px;
+    width: 300px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.trending-preview-rank {
+    width: 70px;
+    min-width: 70px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    color: rgba(0,0,0,0.2)
+}
+
+.trending-preview-rank>p {
+    margin: 0;
 }
