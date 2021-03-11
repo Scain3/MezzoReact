@@ -10,9 +10,6 @@ const searchStories = (stories) => ({
 export const fetchSearchInfo = (term) => async(dispatch) => {
     const res = await fetch(`/api/search?term=${encodeURIComponent(term)}`)
 
-    // const data = await res.json();
-    // const story = data.stories;
-
     dispatch(searchStories(res.data.stories));
 }
 
