@@ -8,7 +8,7 @@ const TrendingPreview = ({ article, rank }) => {
     const date = article.story.createdAt;
     const content = article.story.content;
 
-
+    // TODO: link to PROFILE AND STORY once features are implemented
 
     return (
 			<div className="trending-preview-container">
