@@ -1,0 +1,39 @@
+.trending-preview-container {
+    margin: 10px 20px;
+    width: 350px;
+    min-width: 350px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.trending-preview-rank {
+    width: 50px;
+    min-width: 50px;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 900;
+    color: rgba(117, 117, 117, .4);
+}
+
+.trending-preview-details {
+    width: 100%;
+}
+
+.trending-preview-author {
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.trending-preview-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.trending-preview-stats {
+    font-size: 13px;
+    color: rgba(117, 117, 117, 1);
+}

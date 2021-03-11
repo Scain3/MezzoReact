@@ -68,6 +68,11 @@ module.exports = (sequelize, DataTypes) => {
 					onDelete: "cascade",
 					hooks: true,
 				});
+				User.hasMany(models.Clap, {
+					foreignKey: "userId",
+					onDelete: "cascade",
+					hooks: true,
+				});
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
