@@ -16,7 +16,7 @@ router.get('/', asyncHandler(async(req, res) => {
     let stories;
     let error = "";
     try{
-        stories = await searchStories(`%${req.query.term}`);
+        stories = await searchStories(`%${req.query.term}%`);
     } catch(e){
         console.error(e);
         error = `An error occurred that reads "${e.message}". Check the console for more details.`;
