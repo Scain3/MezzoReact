@@ -1,3 +1,17 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.nav-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-modal-link, .signup-modal-link, .signup-link{
+  margin-left: 50px;
+}
