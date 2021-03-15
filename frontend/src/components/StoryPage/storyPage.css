@@ -1,0 +1,33 @@
+.story-page-info-container {
+    width: 700px;
+    border: 1px solid black;
+    margin: 100px auto 0 auto;
+}
+
+.story-page-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.story-page-subtitle {
+    font-size: 22px;
+    color: rgba(117, 117, 117, 1);
+    margin-bottom: 30px;
+}
+
+.story-page-stats-container {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+}
+
+.story-page-author {
+    font-size: 14px;
+    padding-right: 25px;
+}
+
+.story-page-stats {
+    font-size: 14px;
+    color: rgba(117, 117, 117, 1);
+}
