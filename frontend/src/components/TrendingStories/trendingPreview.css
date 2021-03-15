@@ -33,6 +33,11 @@
     margin: 10px 0;
 }
 
+.trending-preview-title:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .trending-preview-stats {
     font-size: 13px;
     color: rgba(117, 117, 117, 1);

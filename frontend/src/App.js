@@ -7,6 +7,7 @@ import { Route, Switch } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignupFormPage from "./components/SignupFormModal/SignupForm";
 import Navigation from "./components/Navigation";
+import StoryPage from "./components/StoryPage"
 import HomePage from "./components/HomePage";
 
 // Redux
@@ -24,8 +25,8 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <ProtectedRoute path="/test">
-            <h1>Hello</h1>
+          <ProtectedRoute path="/story/:id">
+            <StoryPage />
           </ProtectedRoute>
           <Route path="/signup">
             <SignupFormPage />
