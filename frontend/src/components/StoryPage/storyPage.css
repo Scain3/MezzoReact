@@ -44,8 +44,20 @@
     margin: 20px auto 50px auto;
 }
 
-.story-page-content {
+/* Logged in view */
+
+.logged-in-story-page-content {
     width: 700px;
     margin: 0 auto;
+    font-size: 22px;
+}
+
+/* Logged out view */
+
+.logged-out-story-page-content {
+    width: 700px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto 200px auto;
     font-size: 22px;
 }

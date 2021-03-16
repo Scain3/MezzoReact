@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import LoggedInStory from "./LoggedInStory"
+import LoggedOutStory from "./LoggedOutStory"
+
 import { getStory } from "../../store/story";
 import { parseDate, estimateTime } from "../../utils";
 import "./storyPage.css";
@@ -41,7 +44,7 @@ const StoryPage = () => {
 				<div className="story-page-image-container">
 					<img className="story-page-image" src={`${story.image}`} alt='' />
 				</div>
-				{currentUser ? <p className="story-page-content">{story.content}</p> : <p>Logged out</p>}
+				{currentUser ? <LoggedInStory content={story.content} /> : <LoggedOutStory content={story.content} />}
 			</>
 		)
 	);
