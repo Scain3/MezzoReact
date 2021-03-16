@@ -16,7 +16,7 @@ function LoginFormModal() {
       <button className="login-modal-button"onClick={() => setShowModal(true)}>Log In</button>
       {showModal && (
         <Modal onClose={closeModal}>
-          {signup ? <SignupForm setSignup={setSignup} /> : <LoginForm setSignup={setSignup}/>}
+          {signup ? <SignupForm setSignup={setSignup} /> : <LoginForm greeting={"Welcome Back."} setSignup={setSignup}/>}
         </Modal>
       )}
     </>
