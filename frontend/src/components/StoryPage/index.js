@@ -13,6 +13,8 @@ const StoryPage = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 
+	// TODO: Add favorite button component next to stats when done
+
 	useEffect(() => {
 		(async () => {
 			await dispatch(getStory(id));
@@ -29,9 +31,14 @@ const StoryPage = () => {
 					<div className="story-page-stats-container">
 						<p className="story-page-author">{`${story.User.firstName} ${story.User.lastName}`}</p>
 						<p className="story-page-stats">
-							{`${parseDate(story.createdAt)} • ${estimateTime(story.content)} min read`}
+							{`${parseDate(story.createdAt)} • ${estimateTime(
+								story.content
+							)} min read`}
 						</p>
 					</div>
+				</div>
+				<div className="story-page-image-container">
+					<img className="story-page-image" src={`${story.image}`} alt='' />
 				</div>
 			</>
 		)

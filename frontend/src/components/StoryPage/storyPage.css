@@ -31,3 +31,15 @@
     font-size: 14px;
     color: rgba(117, 117, 117, 1);
 }
+
+.story-page-image-container {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.story-page-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+}
