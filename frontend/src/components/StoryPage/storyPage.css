@@ -41,5 +41,11 @@
     width: 100%;
     height: auto;
     max-width: 800px;
+    margin: 20px auto 50px auto;
+}
+
+.story-page-content {
+    width: 700px;
     margin: 0 auto;
+    font-size: 22px;
 }

@@ -25,8 +25,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <ProtectedRoute exact path="/story/:id">
+          <Route exact path="/story/:id">
             <StoryPage />
+          </Route>
+          <ProtectedRoute exact path="user/:id">
+            <p>Profile Page</p>
           </ProtectedRoute>
           <Route path="/signup">
             <SignupFormPage />

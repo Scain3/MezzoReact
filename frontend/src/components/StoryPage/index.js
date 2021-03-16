@@ -9,6 +9,7 @@ import "./storyPage.css";
 const StoryPage = () => {
 	const [loaded, setLoaded] = useState(false);
 	const story = useSelector((state) => state.story.story);
+	const currentUser = useSelector(state => state.session.user);
 
 	const { id } = useParams();
 	const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const StoryPage = () => {
 				<div className="story-page-image-container">
 					<img className="story-page-image" src={`${story.image}`} alt='' />
 				</div>
+				{currentUser ? <p className="story-page-content">{story.content}</p> : <p>Logged out</p>}
 			</>
 		)
 	);
