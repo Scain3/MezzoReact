@@ -16,30 +16,17 @@ const {
 
 const router = express.Router();
 
-// GET story (includes comments, follow, isLiked)
+// GET story
 router.get(
 	"/:id(\\d+)",
-	requireAuth,
+	// requireAuth,
 	asyncHandler(async (req, res, next) => {
 		const storyId = parseInt(req.params.id);
 		const story = await Story.findByPk(storyId, {
-			include: [User, Like],
+			include: [{model: User, attributes: ["firstName", "lastName"]}],
 		});
 
-		let isLiked = false;
-		story.Likes.forEach((like) => {
-			const { userId } = like;
-			if (userId === res.locals.user.id) {
-				isLiked = true;
-			}
-		});
-
-		const isFollowingId = story.User.id;
-		const userId = res.locals.user.id;
-		let follow = await Follow.findOne({ where: { userId, isFollowingId } });
-
-		const comments = await Comment.findAll({ where: { storyId } });
-		res.render("readStory", { story, comments, follow, isLiked });
+		return res.json(story)
 	})
 );
 

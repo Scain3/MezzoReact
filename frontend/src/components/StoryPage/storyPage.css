@@ -1,0 +1,79 @@
+.story-page-info-container {
+    width: 700px;
+    margin: 100px auto 0 auto;
+}
+
+.story-page-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.story-page-subtitle {
+    font-size: 22px;
+    color: rgba(117, 117, 117, 1);
+    margin-bottom: 30px;
+}
+
+.story-page-stats-container {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+}
+
+.story-page-author {
+    font-size: 14px;
+    padding-right: 25px;
+}
+
+.story-page-stats {
+    font-size: 14px;
+    color: rgba(117, 117, 117, 1);
+}
+
+.story-page-image-container {
+    margin: 20px auto;
+    width: 100%;
+}
+
+.story-page-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin: 20px auto 50px auto;
+}
+
+/* Logged in view */
+
+.logged-in-story-page-content {
+    width: 700px;
+    margin: 0 auto 100px auto;
+    font-size: 20px;
+}
+
+/* Logged out view */
+
+.logged-out-story-page-content {
+    width: 700px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 20px;
+    color: rgba(117, 117, 117, .8);
+}
+
+.logged-out-story-login-prompt {
+    width: 700px;
+    height: 800px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logged-out-story-login-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26pt;
+    font-weight: 600;
+    text-align: center;
+}
