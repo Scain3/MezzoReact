@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+
+import CommentsSection from "../CommentsSection";
 
 const LoggedInStory = ({ content }) => {
-    // TODO add Comments section
 
-    return <p className="logged-in-story-page-content">{content}</p>
+	return (
+		<>
+			<p className="logged-in-story-page-content">{content}</p>
+			<CommentsSection />
+		</>
+	);
 };
 
 export default LoggedInStory;
