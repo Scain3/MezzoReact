@@ -53,7 +53,7 @@ router.post(
 	asyncHandler(async (req, res) => {
 		const storyId = req.params.id;
 		const { comment, userId } = req.body;
-		console.log(req)
+		console.log(req);
 		console.log("comment", comment, "userId", userId);
 		// await Comment.create({
 		// 	userId,
@@ -126,7 +126,10 @@ router.get(
 	"/:id(\\d+)/comments",
 	asyncHandler(async (req, res) => {
 		const storyId = req.params.id;
-		const comments = await Comment.findAll({ where: { storyId }});
+		const comments = await Comment.findAll({
+			where: { storyId },
+			include: [{ model: User, attributes: ["firstName", "lastName"] }],
+		});
 		res.json(comments);
 	})
 );
