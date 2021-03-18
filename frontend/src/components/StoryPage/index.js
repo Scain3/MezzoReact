@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import LoggedInStory from "./LoggedInStory"
-import LoggedOutStory from "./LoggedOutStory"
+import LoggedInStory from "./LoggedInStory";
+import LoggedOutStory from "./LoggedOutStory";
 
 import { getStory } from "../../store/story";
 import { parseDate, estimateTime } from "../../utils";
@@ -12,7 +12,7 @@ import "./storyPage.css";
 const StoryPage = () => {
 	const [loaded, setLoaded] = useState(false);
 	const story = useSelector((state) => state.story.story);
-	const currentUser = useSelector(state => state.session.user);
+	const currentUser = useSelector((state) => state.session.user);
 
 	const { id } = useParams();
 	const dispatch = useDispatch();
@@ -35,16 +35,23 @@ const StoryPage = () => {
 					<div className="story-page-stats-container">
 						<p className="story-page-author">{`${story.User.firstName} ${story.User.lastName}`}</p>
 						<p className="story-page-stats">
-							{`${parseDate(story.createdAt)} • ${estimateTime(
-								story.content
-							)} min read`}
+							{`${parseDate(story.createdAt)}`}{" "}
+							<span className="story-page-stats-spacer">•</span>{" "}
+							{`${estimateTime(story.content)} min read`}
+							<span className="story-page-stats-spacer">
+								<i className="fas fa-music"></i>
+							</span>{" "}
 						</p>
 					</div>
 				</div>
 				<div className="story-page-image-container">
-					<img className="story-page-image" src={`${story.image}`} alt='' />
+					<img className="story-page-image" src={`${story.image}`} alt="" />
 				</div>
-				{currentUser ? <LoggedInStory content={story.content} /> : <LoggedOutStory content={story.content} />}
+				{currentUser ? (
+					<LoggedInStory content={story.content} />
+				) : (
+					<LoggedOutStory content={story.content} />
+				)}
 			</>
 		)
 	);

@@ -31,6 +31,10 @@
     color: rgba(117, 117, 117, 1);
 }
 
+.story-page-stats-spacer {
+    padding: 0 10px;
+}
+
 .story-page-image-container {
     margin: 20px auto;
     width: 100%;
