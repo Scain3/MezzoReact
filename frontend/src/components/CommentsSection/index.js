@@ -12,6 +12,8 @@ const CommentsSection = ({ storyId }) => {
 	const comments = useSelector((state) => state.comments.comments);
 	const dispatch = useDispatch();
 
+	// TODO: Add this component in a left-side modal, ala medium
+
 	useEffect(() => {
 		(async () => {
 			await dispatch(getComments(storyId));
@@ -22,12 +24,12 @@ const CommentsSection = ({ storyId }) => {
 	return (
 		loaded && (
 			<div className="comments-section-container">
+				<CommentForm />
 				<div className="comments-section-comments-container">
 					{comments.map((comment, i) => (
 						<Comment key={i} comment={comment} />
 					))}
 				</div>
-				<CommentForm />
 			</div>
 		)
 	);
