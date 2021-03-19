@@ -24,11 +24,13 @@ const CommentsSection = ({ storyId }) => {
 	return (
 		loaded && (
 			<div className="comments-section-container">
-				<CommentForm />
-				<div className="comments-section-comments-container">
-					{comments.map((comment, i) => (
-						<Comment key={i} comment={comment} />
-					))}
+				<div className="comments-section-content">
+					<CommentForm />
+					<div className="comments-section-comments-container">
+						{comments.map((comment, i) => (
+							<Comment key={i} comment={comment} />
+						))}
+					</div>
 				</div>
 			</div>
 		)

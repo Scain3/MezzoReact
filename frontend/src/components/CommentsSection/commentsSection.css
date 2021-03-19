@@ -1,6 +1,9 @@
 .comments-section-container {
-    width: 700px;
-    margin: 0 auto 100px auto;
-    border: 1px solid black;
-    text-align: center;
+    width: 420px;
+    height: 100vh;
+    /* text-align: center; */
+}
+
+.comments-section-content {
+    padding: 10px;
 }
