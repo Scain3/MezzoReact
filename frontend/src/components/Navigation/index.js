@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
+import SearchBar from '../Search/SearchBar';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -12,22 +13,38 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div className="authenticated-links">
+        <div className="search-bar-div">
+          <SearchBar />
+        </div>
+        <div className="profile-button-div">
+          <ProfileButton user={sessionUser} />
+        </div>
+      </div>
     );
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal />
-        <SignupFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
+      <div className="nav-links">
+        <div className="login-modal-link">
+          <LoginFormModal />
+        </div>
+        <div className="signup-modal-link">
+          <SignupFormModal />
+        </div>
+        {/* <div className="signup-link">
+          <NavLink to="/signup">Sign Up</NavLink>
+        </div> */}
+      </div>
     );
   }
 
   return (
-    <ul>
+    <ul className="nav-container">
       <li>
-        <NavLink exact to="/">Home</NavLink>
+        <NavLink className="home-link" exact to="/">Mezzo</NavLink>
+
+      </li>
+      <li>
         {isLoaded && sessionLinks}
       </li>
     </ul>

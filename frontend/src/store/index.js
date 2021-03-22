@@ -1,12 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import session from './session'
-import trendingReducer from './trending'
-import storyReducer from './story'
+import session from './session';
+import trendingReducer from './trending';
+import searchReducer from './search';
+import storyReducer from './story';
 
 const rootReducer = combineReducers({
   session,
   trending: trendingReducer,
+  search: searchReducer,
   story: storyReducer,
 });
 

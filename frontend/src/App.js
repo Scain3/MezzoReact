@@ -9,6 +9,7 @@ import SignupFormPage from "./components/SignupFormModal/SignupForm";
 import Navigation from "./components/Navigation";
 import StoryPage from "./components/StoryPage"
 import HomePage from "./components/HomePage";
+import SearchPage from "./components/Search/SearchPage";
 
 // Redux
 import * as sessionActions from "./store/session";
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/search">
+            <SearchPage />
           </Route>
         </Switch>
       )}
