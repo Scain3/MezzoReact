@@ -11,10 +11,10 @@ function SearchPage(){
         <div>{
             searchInfo && searchInfo.map((search, index) => (
                 <div>
-                    <div>{search.title}</div>
-                    <div>{search.subtitle}</div>
-                    <img src={search.image} alt={search.title}/>
-                    <div>{search.content}</div>
+                    <div className="search-landing__title">{search.title}</div>
+                    <div className="search-landing__subtitle">{search.subtitle}</div>
+                    <img className="search-landing__image" src={search.image} alt={search.title}/>
+                    <div className="search-landing__content">{search.content}</div>
                 </div>
             ))
 
