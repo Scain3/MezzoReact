@@ -7,3 +7,8 @@
 .comments-section-content {
     padding: 10px;
 }
+
+.comments-modal-button {
+    cursor: pointer;
+    font-size: 30px;
+}

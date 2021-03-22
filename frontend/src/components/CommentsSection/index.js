@@ -43,7 +43,9 @@ const CommentsSection = ({ storyId }) => {
 
 		return (
 			<>
-				<button onClick={onClose}>Reply</button>
+				<button title="Reply" className="comments-modal-button" onClick={onClose}>
+					<i className="far fa-comment"></i>
+				</button>
 				{openModal && (
 					<CommentModal onClose={onClose}>
 						<CommentsSectionContent storyId={storyId} />

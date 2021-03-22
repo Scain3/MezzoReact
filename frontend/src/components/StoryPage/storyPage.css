@@ -55,6 +55,11 @@
     font-size: 20px;
 }
 
+.logged-in-story-controls {
+    width: 300px;
+    margin: 20px auto 50px auto;
+}
+
 /* Logged out view */
 
 .logged-out-story-page-content {
