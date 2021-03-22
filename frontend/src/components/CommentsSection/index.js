@@ -5,14 +5,13 @@ import { getComments } from "../../store/comments";
 
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
+import { CommentModal } from "../../context/Modal"
 import "./commentsSection.css";
 
-const CommentsSection = ({ storyId }) => {
+const CommentsSectionContent = ({ storyId }) => {
 	const [loaded, setLoaded] = useState(false);
 	const comments = useSelector((state) => state.comments.comments);
 	const dispatch = useDispatch();
-
-	// TODO: Add this component in a left-side modal, ala medium
 
 	useEffect(() => {
 		(async () => {
@@ -35,6 +34,23 @@ const CommentsSection = ({ storyId }) => {
 			</div>
 		)
 	);
+};
+
+const CommentsSection = ({ storyId }) => {
+		const [openModal, setOpenModal] = useState(false);
+
+		const onClose = () => setOpenModal(!openModal);
+
+		return (
+			<>
+				<button onClick={onClose}>Reply</button>
+				{openModal && (
+					<CommentModal onClose={onClose}>
+						<CommentsSectionContent storyId={storyId} />
+					</CommentModal>
+				)}
+			</>
+		);
 };
 
 export default CommentsSection;
