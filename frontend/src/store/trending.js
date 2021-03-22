@@ -1,4 +1,4 @@
-import { fetch } from './csrf.js'
+import { fetch } from './csrf.js';
 
 const SET_TRENDING = "setTrending";
 
@@ -16,14 +16,14 @@ export const getTrendingStories = () => async (dispatch) => {
 const initialState = { stories: null };
 
 const trendingReducer = (state = initialState, action) => {
-    let newState
+    let newState;
     switch (action.type) {
         case SET_TRENDING:
             newState = Object.assign({}, state, { stories: action.payload });
             return newState;
         default:
             return state;
-    }
-}
+    };
+};
 
 export default trendingReducer;

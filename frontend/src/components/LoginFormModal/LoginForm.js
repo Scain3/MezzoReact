@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-function LoginForm( {setSignup}) {
+function LoginForm( {setSignup, greeting}) {
 	const dispatch = useDispatch();
 	const [credential, setCredential] = useState("");
 	const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ function LoginForm( {setSignup}) {
 	return (
 		<>
 		<div className="login-form-container">
-			<h1 className="form-header">Welcome Back.</h1>
+			<h1 className="form-header">{greeting}</h1>
 			<form className="login-form" onSubmit={handleSubmit}>
 				<p className="login-errors">
 					{errors[0]}
