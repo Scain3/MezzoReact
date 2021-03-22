@@ -14,7 +14,7 @@ function SearchPage(){
                     <div className="search-landing__title">{search.title}</div>
                     <div className="search-landing__subtitle">{search.subtitle}</div>
                     <img className="search-landing__image" src={search.image} alt={search.title}/>
-                    <div className="search-landing__content">{search.content}</div>
+                    <p className="search-landing__content">{search.content}</p>
                 </div>
             ))
 
