@@ -10,6 +10,7 @@ import CommentForm from "./CommentForm";
 import { CommentModal } from "../../context/Modal";
 import "./commentsSection.css";
 
+
 const CommentsSectionContent = ({ storyId, comments }) => {
 	return (
 		<div className="comments-section-container">
@@ -24,6 +25,7 @@ const CommentsSectionContent = ({ storyId, comments }) => {
 		</div>
 	);
 };
+
 
 const CommentsSection = ({ storyId }) => {
 	const [openModal, setOpenModal] = useState(false);

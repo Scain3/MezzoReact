@@ -34,6 +34,7 @@ export const parseDate = (date) => {
 };
 
 export const parseResponses = (responses) => {
+    // returns a gramatically correct sentence based on number of comments
     if (responses.length === 0 ) {
         return `No comments yet`;
     } else if (responses.length === 1) {
