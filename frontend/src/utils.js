@@ -30,5 +30,15 @@ export const parseDate = (date) => {
     const day = date.substring(8, 10);
 
     // Return formatted date for display
-    return `${abbreviations[month]} ${day}`
-}
+    return `${abbreviations[month]} ${day}`;
+};
+
+export const parseResponses = (responses) => {
+    if (responses.length === 0 ) {
+        return `No comments yet`;
+    } else if (responses.length === 1) {
+        return `1 comment`;
+    } else {
+        return `${responses.length} comments`;
+    };
+};

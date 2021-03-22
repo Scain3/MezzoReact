@@ -10,5 +10,14 @@
 
 .comments-modal-button {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comments-modal-button-stats {
+    font-size: 16px;
+    margin-left: 10px;
+    color: rgba(117, 117, 117, 1)
 }
