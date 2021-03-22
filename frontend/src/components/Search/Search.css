@@ -34,20 +34,30 @@
 
 /* Search Landing Page */
 
-.search-landing__title{
+.search-landing__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.search-landing__title{
+    margin: 0 auto;
 }
 
 .search-landing__subtitle{
-
+    margin: 0 auto;
 }
 
 .search-landing__image{
+    margin: 0 auto;
     width: 450px;
     height: 300px;
 
 }
 
 .search-landing__content{
-
+    margin: 0 auto;
+    width: 600px;
+    height: 70px;
+    text-overflow: hidden;
 }
