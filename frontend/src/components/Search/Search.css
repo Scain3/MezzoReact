@@ -24,6 +24,7 @@
 .nav-search__input{
     border: none;
     background-color: white;
+    padding-bottom: 10px;
 }
 
 .nav-search__submit{
