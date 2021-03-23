@@ -3,19 +3,24 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { getComments } from "../../store/comments";
 
-import { parseResponses } from "../../utils";
+import { countComments } from "../../utils";
 
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import { CommentModal } from "../../context/Modal";
 import "./commentsSection.css";
 
-
-const CommentsSectionContent = ({ storyId, comments }) => {
+const CommentsSectionContent = ({ storyId, comments, onClose }) => {
 	return (
 		<div className="comments-section-container">
 			<div className="comments-section-content">
-				<CommentForm />
+				<div className="comments-section-header">
+					{countComments(comments)}
+					<button title="close" className="comments-section-close-button" onClick={onClose}>
+						<i className="fas fa-times"></i>
+					</button>
+				</div>
+				<CommentForm storyId={storyId} />
 				<div className="comments-section-comments-container">
 					{comments.map((comment, i) => (
 						<Comment key={i} comment={comment} />
@@ -26,9 +31,8 @@ const CommentsSectionContent = ({ storyId, comments }) => {
 	);
 };
 
-
 const CommentsSection = ({ storyId }) => {
-	const [openModal, setOpenModal] = useState(false);
+	const [openModal, setOpenModal] = useState(true);
 	const [loaded, setLoaded] = useState(false);
 	const comments = useSelector((state) => state.comments.comments);
 	const dispatch = useDispatch();
@@ -51,13 +55,11 @@ const CommentsSection = ({ storyId }) => {
 					onClick={onClose}
 				>
 					<i className="far fa-comment"></i>{" "}
-					<span className="comments-modal-button-stats">
-						{parseResponses(comments)}
-					</span>
+					<span className="comments-modal-button-stats">Comment</span>
 				</button>
 				{openModal && (
 					<CommentModal onClose={onClose}>
-						<CommentsSectionContent storyId={storyId} comments={comments} />
+						<CommentsSectionContent storyId={storyId} comments={comments} onClose={onClose} />
 					</CommentModal>
 				)}
 			</>

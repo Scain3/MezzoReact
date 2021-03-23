@@ -1,13 +1,4 @@
-.comments-section-container {
-    width: 420px;
-    height: 100vh;
-    /* text-align: center; */
-}
-
-.comments-section-content {
-    padding: 10px;
-}
-
+/* Button visible in article */
 .comments-modal-button {
     cursor: pointer;
     font-size: 26px;
@@ -20,4 +11,32 @@
     font-size: 16px;
     margin-left: 10px;
     color: rgba(117, 117, 117, 1)
+}
+
+
+/* Modal */
+.comments-section-container {
+    width: 420px;
+    height: 100vh;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+}
+
+.comments-section-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.comments-section-header {
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.comments-section-close-button {
+    font-size: 35px;
+    color: rgba(117, 117, 117, .8);
+    cursor: pointer;
 }
