@@ -1,10 +1,14 @@
 .comment-container {
-    border: 1px solid black;
-    padding: 5px;
-
+	/* border: 1px solid black; */
+	padding: 5px;
+    margin: 10px 0;
 }
 
 .comment-author-info {
-    color: rgba(117, 117, 117, 1);
-    font-size: 14px;
+	color: rgba(117, 117, 117, 1);
+	font-size: 14px;
+}
+
+.comment-content {
+	padding: 5px 0;
 }

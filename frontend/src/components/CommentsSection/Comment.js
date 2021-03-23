@@ -10,11 +10,11 @@ const Comment = ({ comment }) => {
 
 	return (
 		<div className="comment-container">
-            <p>{comment.comment}</p>
 			<p className="comment-author-info">
-				{`by ${comment.User.firstName} ${comment.User.lastName} on
+				{`from ${comment.User.firstName} ${comment.User.lastName} on
 				${parseDate(comment.createdAt)}`}
 			</p>
+            <p className="comment-content">{comment.comment}</p>
 		</div>
 	);
 };
