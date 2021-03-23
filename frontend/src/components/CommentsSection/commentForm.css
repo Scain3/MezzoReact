@@ -12,9 +12,9 @@
 }
 
 .comment-form-textarea {
-    width:  100%;
+    width:  340px;
     height: 70px;
-    padding: 5px;
+    padding: 10px;
     resize: none;
     box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
 }

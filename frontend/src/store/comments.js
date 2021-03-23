@@ -14,13 +14,12 @@ export const getComments = (storyId) => async (dispatch) => {
 };
 
 export const postComment = (body, storyId) => async (dispatch) => {
-    const res = await fetch(`api/stories/${storyId}/comment`, {
+    const res = await fetch(`/api/stories/${storyId}/comment`, {
         method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body,
+        body: JSON.stringify(body),
     });
+    dispatch(setComments(res.data));
+    return res;
 };
 
 const initialState = { comments: null };
