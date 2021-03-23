@@ -13,6 +13,16 @@ export const getComments = (storyId) => async (dispatch) => {
     return res;
 };
 
+export const postComment = (body, storyId) => async (dispatch) => {
+    const res = await fetch(`api/stories/${storyId}/comment`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body,
+    });
+};
+
 const initialState = { comments: null };
 
 const commentReducer = (state = initialState, action) => {

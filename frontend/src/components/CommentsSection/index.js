@@ -55,7 +55,7 @@ const CommentsSection = ({ storyId }) => {
 					onClick={onClose}
 				>
 					<i className="far fa-comment"></i>{" "}
-					<span className="comments-modal-button-stats">Comment</span>
+					<span className="comments-modal-button-stats">Comment ({comments.length})</span>
 				</button>
 				{openModal && (
 					<CommentModal onClose={onClose}>
