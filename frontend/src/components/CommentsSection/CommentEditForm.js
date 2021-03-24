@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./commentEditForm.css";
 
 const CommentEditForm = ({ comment, setEditing, userId }) => {
+    const [editedComment, setEditedComment] = useState(comment.comment)
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(comment.comment, userId)
+        console.log(editedComment, userId)
     };
 
     const handleDelete = () => {
@@ -16,7 +17,10 @@ const CommentEditForm = ({ comment, setEditing, userId }) => {
 	return (
 		<div className="comment-edit-form-container">
 			<form onSubmit={handleSubmit}>
-				<textarea />
+				<textarea
+                    onChange={e => setEditedComment(e.target.value)}
+                    value={editedComment}
+                />
 				<div className="comment-edit-form-controls">
 					<button
 						className="comment-edit-form-cancel-button"
