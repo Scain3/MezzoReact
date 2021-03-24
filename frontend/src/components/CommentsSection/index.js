@@ -23,7 +23,7 @@ const CommentsSectionContent = ({ storyId, comments, onClose }) => {
 				<CommentForm storyId={storyId} />
 				<div className="comments-section-comments-container">
 					{comments.map((comment, i) => (
-						<Comment storyId={storyId} key={i} comment={comment} />
+						<Comment storyId={storyId} key={comment.id} comment={comment} />
 					))}
 				</div>
 			</div>
@@ -55,7 +55,7 @@ const CommentsSection = ({ storyId }) => {
 					onClick={onClose}
 				>
 					<i className="far fa-comment"></i>{" "}
-					<span className="comments-modal-button-stats">Comment ({comments.length})</span>
+					<p className="comments-modal-button-stats">Comment ({comments.length})</p>
 				</button>
 				{openModal && (
 					<CommentModal onClose={onClose}>

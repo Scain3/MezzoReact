@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.comments-modal-button:hover > p {
+    text-decoration: underline;
+}
+
 .comments-modal-button-stats {
     font-size: 16px;
     margin-left: 10px;
@@ -45,7 +49,7 @@
 .comments-section-comments-container {
     display: flex;
     flex-direction: column;
-    min-height: 20vh;
+    min-height: 5vh;
     max-height: 75vh;
     overflow-y: scroll;
 }

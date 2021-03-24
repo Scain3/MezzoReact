@@ -23,7 +23,6 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
     const handleDelete = async() => {
         const body = { storyId }
         await dispatch(deleteComment(body, commentId));
-        return setEditing(false);
     };
 
 	return (
@@ -35,14 +34,6 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
                     value={editedComment}
                 />
 				<div className="comment-edit-form-controls">
-					<button
-						className="comment-edit-form-cancel-button"
-						title="cancel"
-						type="button"
-						onClick={() => setEditing(false)}
-					>
-						<i className="fas fa-times"></i>
-					</button>
 					<button
 						title="save"
 						type="submit"
@@ -57,6 +48,14 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
 						onClick={handleDelete}
 					>
 						<i className="far fa-trash-alt"></i>
+					</button>
+					<button
+						className="comment-edit-form-cancel-button"
+						title="cancel"
+						type="button"
+						onClick={() => setEditing(false)}
+					>
+						<i className="fas fa-times"></i>
 					</button>
 				</div>
 			</form>

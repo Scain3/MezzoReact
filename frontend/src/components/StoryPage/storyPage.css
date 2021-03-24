@@ -58,6 +58,9 @@
 .logged-in-story-controls {
     width: 300px;
     margin: 20px auto 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* Logged out view */
