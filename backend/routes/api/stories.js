@@ -60,7 +60,7 @@ router.post(
 		});
 		const comments = await Comment.findAll({
 			where: { storyId },
-			include: [{ model: User, attributes: ["firstName", "lastName"] }],
+			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
 			order: [["id", "DESC"]]
 		});
 		res.json(comments);
@@ -111,7 +111,7 @@ router.get(
 		const stories = await Promise.all(
 			mostClapped.map(async (story) => {
 				story.dataValues.story = await Story.findByPk(story.storyId, {
-					include: [{ model: User, attributes: ["firstName", "lastName"] }],
+					include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
 				});
 				return story;
 			})
@@ -128,7 +128,7 @@ router.get(
 		const storyId = req.params.id;
 		const comments = await Comment.findAll({
 			where: { storyId },
-			include: [{ model: User, attributes: ["firstName", "lastName"] }],
+			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
 			order: [["id", "DESC"]]
 		});
 		res.json(comments);

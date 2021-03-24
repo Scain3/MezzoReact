@@ -1,0 +1,19 @@
+.comment-edit-form-container {
+    min-height: 70px;
+    max-height: 70px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.comment-edit-form-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70px;
+    margin-left: 280px;
+}
+
+.comment-edit-form-controls > button {
+    cursor: pointer;
+}
