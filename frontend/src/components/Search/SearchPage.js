@@ -1,10 +1,10 @@
 import React from "react";
 import {useSelector} from "react-redux";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 import './Search.css';
 
 function SearchPage(){
-    const history = useHistory();
+    // const history = useHistory();
 
     const searchInfo = useSelector(state => state.search.story);
     return(
