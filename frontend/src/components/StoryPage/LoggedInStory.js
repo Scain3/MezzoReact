@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const LoggedInStory = ({ content }) => {
-    // TODO add Comments section
+import CommentsSection from "../CommentsSection";
 
-    return <p className="logged-in-story-page-content">{content}</p>
+const LoggedInStory = ({ content, storyId }) => {
+	return (
+		<>
+			<p className="logged-in-story-page-content">{content}</p>
+			<div className="logged-in-story-controls">
+				<CommentsSection storyId={storyId} />
+			</div>
+		</>
+	);
 };
 
 export default LoggedInStory;

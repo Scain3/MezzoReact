@@ -19,7 +19,7 @@ const storyReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case SET_STORY:
-            newState = Object.assign({}, state, {story: action.payload});
+            newState = Object.assign({}, state, { story: action.payload });
             return newState;
         default:
             return state;

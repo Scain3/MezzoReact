@@ -1,0 +1,30 @@
+.comment-container {
+    min-height: 70px;
+	padding: 5px;
+    margin: 10px 0;
+}
+
+.comment-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.comment-author-info {
+	color: rgba(117, 117, 117, 1);
+	font-size: 14px;
+}
+
+.comment-edit-button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.comment-edit-button:hover {
+    font-size: 17px;
+}
+
+.comment-content {
+	padding: 5px 0;
+}

@@ -31,6 +31,10 @@
     color: rgba(117, 117, 117, 1);
 }
 
+.story-page-stats-spacer {
+    padding: 0 10px;
+}
+
 .story-page-image-container {
     margin: 20px auto;
     width: 100%;
@@ -49,6 +53,14 @@
     width: 700px;
     margin: 0 auto 100px auto;
     font-size: 20px;
+}
+
+.logged-in-story-controls {
+    width: 300px;
+    margin: 20px auto 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* Logged out view */

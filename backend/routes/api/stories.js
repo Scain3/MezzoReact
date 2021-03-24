@@ -23,10 +23,10 @@ router.get(
 	asyncHandler(async (req, res, next) => {
 		const storyId = parseInt(req.params.id);
 		const story = await Story.findByPk(storyId, {
-			include: [{model: User, attributes: ["firstName", "lastName"]}],
+			include: [{ model: User, attributes: ["firstName", "lastName"] }],
 		});
 
-		return res.json(story)
+		return res.json(story);
 	})
 );
 
@@ -52,18 +52,20 @@ router.post(
 	"/:id(\\d+)/comment",
 	asyncHandler(async (req, res) => {
 		const storyId = req.params.id;
-		const { comment } = req.body;
+		const { comment, userId } = req.body;
 		await Comment.create({
-			userId: res.locals.user.id,
+			userId,
 			storyId: req.params.id,
 			comment,
 		});
-		const comments = await Comment.findAll({ where: { storyId } });
+		const comments = await Comment.findAll({
+			where: { storyId },
+			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
+			order: [["id", "DESC"]]
+		});
 		res.json(comments);
 	})
 );
-
-module.exports = router;
 
 // POST like (or delete like)
 router.post(
@@ -90,25 +92,6 @@ router.post(
 		res.json(isLiked);
 	})
 );
-// router.post('/:id/like', asyncHandler(async (req, res) => {
-//     const story = await Story.findByPk(req.params.id, { include: [User, Like] });
-//     let isLiked = false;
-//     const storyId = req.params.id;
-//     const userId = res.locals.user.id;
-//     story.Likes.forEach((like) => {
-//       const { userId } = like;
-//       if (userId === res.locals.user.id) {
-//         isLiked = true;
-//       }
-//     })
-//     if (!isLiked) {
-//       await Like.create({ storyId, userId });
-//     } else {
-//       let likes = await Like.findOne({ where: { storyId: req.params.id, userId: res.locals.user.id } });
-//       await likes.destroy();
-//     }
-//     res.json(isLiked);
-//   }))
 
 // GET trending stories
 router.get(
@@ -128,7 +111,7 @@ router.get(
 		const stories = await Promise.all(
 			mostClapped.map(async (story) => {
 				story.dataValues.story = await Story.findByPk(story.storyId, {
-					include: [{ model: User, attributes: ["firstName", "lastName"] }],
+					include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
 				});
 				return story;
 			})
@@ -137,3 +120,19 @@ router.get(
 		res.json(stories);
 	})
 );
+
+// GET comments by story
+router.get(
+	"/:id(\\d+)/comments",
+	asyncHandler(async (req, res) => {
+		const storyId = req.params.id;
+		const comments = await Comment.findAll({
+			where: { storyId },
+			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
+			order: [["id", "DESC"]]
+		});
+		res.json(comments);
+	})
+);
+
+module.exports = router;

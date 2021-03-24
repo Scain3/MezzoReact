@@ -89,6 +89,13 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					userId: 1,
+					storyId: 6,
+					comment: "Test comment.",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);

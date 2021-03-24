@@ -36,3 +36,18 @@ export function Modal({ onClose, children }) {
     modalNode
   );
 }
+
+export function CommentModal({ onClose, children }) {
+  const modalNode = useContext(ModalContext);
+  if (!modalNode) return null;
+
+  return ReactDOM.createPortal(
+    <div className="comment-modal">
+      <div className="comment-modal-background" onClick={onClose} />
+      <div className="comment-modal-content">
+        {children}
+      </div>
+    </div>,
+    modalNode
+  );
+}
