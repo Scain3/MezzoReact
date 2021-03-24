@@ -17,3 +17,12 @@
 .comment-edit-form-controls > button {
     cursor: pointer;
 }
+
+.comment-edit-form-textarea {
+    width: 340px;
+    resize: none;
+    height: 40px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}

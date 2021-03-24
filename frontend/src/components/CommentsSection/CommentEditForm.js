@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { editComment } from "../../store/comments"
+import { editComment, deleteComment } from "../../store/comments"
 import "./commentEditForm.css";
 
 const CommentEditForm = ({ comment, setEditing, storyId }) => {
@@ -11,6 +11,7 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+        if (comment.comment === editedComment) return setEditing(false);
         const body = {
             comment: editedComment,
             storyId
@@ -19,14 +20,17 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
         return setEditing(false);
     };
 
-    const handleDelete = () => {
-        console.log("DELETE")
+    const handleDelete = async() => {
+        const body = { storyId }
+        await dispatch(deleteComment(body, commentId));
+        return setEditing(false);
     };
 
 	return (
 		<div className="comment-edit-form-container">
 			<form onSubmit={handleSubmit}>
 				<textarea
+                    className="comment-edit-form-textarea"
                     onChange={e => setEditedComment(e.target.value)}
                     value={editedComment}
                 />

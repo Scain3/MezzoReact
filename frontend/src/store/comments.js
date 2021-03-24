@@ -31,6 +31,15 @@ export const editComment = (body, commentId) => async (dispatch) => {
     return res;
 };
 
+export const deleteComment = (body, commentId) => async (dispatch) => {
+    const res = await fetch(`/api/comments/${commentId}/delete`, {
+        method: 'POST',
+        body: JSON.stringify(body),
+    });
+    dispatch(setComments(res.data));
+    return res;
+};
+
 const initialState = { comments: null };
 
 const commentReducer = (state = initialState, action) => {
