@@ -32,6 +32,7 @@ const TrendingStories = () => {
 						<TrendingPreview key={i} article={story} rank={i + 1} />
 					))}
 				</div>
+				<div className="padding-divider"></div>
 			</>
 		)
 	);
