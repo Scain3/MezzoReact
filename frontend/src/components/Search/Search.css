@@ -1,0 +1,63 @@
+.nav-search__form{
+    background-color: white;
+}
+
+.search-page__divs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-page__img{
+    width: 291px;
+    height: 415px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.search-product-container{
+    margin: 30px;
+    cursor: pointer;
+}
+
+.nav-search__input{
+    border: none;
+    background-color: white;
+    padding-bottom: 10px;
+}
+
+.nav-search__submit{
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Search Landing Page */
+
+.search-landing__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-landing__title{
+    margin: 0 auto;
+}
+
+.search-landing__subtitle{
+    margin: 0 auto;
+}
+
+.search-landing__image{
+    margin: 0 auto;
+    width: 450px;
+    height: 300px;
+
+}
+
+.search-landing__content{
+    margin: 0 auto;
+    width: 600px;
+}

@@ -4,10 +4,12 @@ import session from './session';
 import trendingReducer from './trending';
 import storyReducer from './story';
 import commentReducer from './comments';
+import searchReducer from './search';
 
 const rootReducer = combineReducers({
   session,
   trending: trendingReducer,
+  search: searchReducer,
   story: storyReducer,
   comments: commentReducer,
 });
