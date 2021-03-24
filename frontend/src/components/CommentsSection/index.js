@@ -23,7 +23,7 @@ const CommentsSectionContent = ({ storyId, comments, onClose }) => {
 				<CommentForm storyId={storyId} />
 				<div className="comments-section-comments-container">
 					{comments.map((comment, i) => (
-						<Comment key={i} comment={comment} />
+						<Comment storyId={storyId} key={i} comment={comment} />
 					))}
 				</div>
 			</div>

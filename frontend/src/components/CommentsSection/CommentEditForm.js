@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
+import { editComment } from "../../store/comments"
 import "./commentEditForm.css";
 
-const CommentEditForm = ({ comment, setEditing, userId }) => {
+const CommentEditForm = ({ comment, setEditing, storyId }) => {
     const [editedComment, setEditedComment] = useState(comment.comment)
+    const commentId = comment.id;
+    const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(editedComment, userId)
+        const body = {
+            comment: editedComment,
+            storyId
+        };
+        await dispatch(editComment(body, commentId));
+        return setEditing(false);
     };
 
     const handleDelete = () => {

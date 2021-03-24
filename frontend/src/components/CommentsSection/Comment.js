@@ -6,7 +6,7 @@ import { parseDate } from "../../utils";
 import CommentEditForm from "./CommentEditForm";
 import "./comment.css";
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, storyId }) => {
 	const [editing, setEditing] = useState(false);
 	const [isAuthor, setIsAuthor] = useState(false);
 	const [loaded, setLoaded] = useState(false);
@@ -14,7 +14,6 @@ const Comment = ({ comment }) => {
 	const userId = useSelector((state) => state.session.user.id);
 
 	useEffect(() => {
-		console.log("authorId", authorId, "userId", userId);
 		(async () => {
 			if (userId === authorId) {
 				await setIsAuthor(true);
@@ -29,9 +28,9 @@ const Comment = ({ comment }) => {
 	if (editing && isAuthor)
 		return (
 			<CommentEditForm
+				storyId={storyId}
 				comment={comment}
 				setEditing={setEditing}
-				userId={userId}
 			/>
 		);
 
