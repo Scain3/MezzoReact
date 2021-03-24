@@ -21,6 +21,7 @@
 
 .sub-heading {
     font-size: 18px;
-    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    line-height: 25px;
     margin-bottom: 27px;
 }
