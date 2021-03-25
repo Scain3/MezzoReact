@@ -1,3 +1,21 @@
 .clap-button {
-    font-size: 26px;
+	cursor: pointer;
+	font-size: 16px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.clap-button:hover > p {
+    text-decoration: underline;
+}
+
+.clap-button-icon {
+	height: 35px;
+	width: auto;
+}
+
+.clap-button-clap-count {
+	color: rgba(117, 117, 117, 1);
+    margin-left: 10px;
 }
