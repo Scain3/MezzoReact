@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from '../../context/Modal';
+import { Modal, NavLink } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import SignupForm from '../SignupFormModal/SignupForm'
 
@@ -13,7 +13,7 @@ function LoginFormModal() {
 
   return (
     <>
-      <button className="login-modal-button"onClick={() => setShowModal(true)}>Log In</button>
+      <button className="login-fake-button"onClick={() => setShowModal(true)}>Sign In</button>
       {showModal && (
         <Modal onClose={closeModal}>
           {signup ? <SignupForm setSignup={setSignup} /> : <LoginForm greeting={"Welcome Back."} setSignup={setSignup}/>}
