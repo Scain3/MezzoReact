@@ -1,6 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { User, Comment } = require("../../db/models");
+const { User, Comment, CommentClap } = require("../../db/models");
 
 
 const router = express.Router();
@@ -44,5 +44,13 @@ router.post(
 		res.json(comments);
 	})
 );
+
+router.get("/:id(\\d+)/claps", asyncHandler(async (req, res) => {
+	const commentId = req.params.id;
+
+	const count = await CommentClap.count({ where: { commentId }});
+	res.json(count)
+}));
+
 
 module.exports = router;
