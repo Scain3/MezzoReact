@@ -13,6 +13,7 @@ function SearchPage(){
             searchInfo && searchInfo.map((search, index) => (
                 <div className="search-landing__container" >
                     <div>
+                        <div>{`${search.User.firstName} ${search.User.lastName}`}</div>
                         <NavLink to={`/story/${search.id}`} className="search-landing__title">{search.title}</NavLink>
                         <div className="search-landing__subtitle">{search.subtitle}</div>
                         <img className="search-landing__image" src={search.image} alt={search.title}/>

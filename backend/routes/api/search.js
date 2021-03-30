@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = (handler) => (req, res, next) => handler(req, res, next).catch(next);
 const { Op } = require('sequelize');
-const { Story } = require('../../db/models');
+const { Story, User } = require('../../db/models');
 
 const searchStories = async(term) => {
     return await Story.findAll({
         where: {
             [Op.or]: [{title: {[Op.iLike]: term}}, {subtitle: {[Op.iLike]: term}}, {content: {[Op.iLike]: term}}]
-        }
+        },
+        include: [{model: User, attributes: ["firstName", "lastName"]}]
     })
 }
 
