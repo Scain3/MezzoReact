@@ -22,6 +22,11 @@ export const clapStory = (storyId, userId) => async (dispatch) => {
     return res;
 };
 
+export const getCommentClaps = (commentId) => async (dispatch) => {
+    const res = await fetch(`/api/comments/${commentId}/claps`);
+    return res.data;
+};
+
 const initialState = { claps: null };
 
 const clapReducer = (state = initialState, action) => {
