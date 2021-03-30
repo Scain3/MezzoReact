@@ -52,7 +52,7 @@ const Comment = ({ comment, storyId }) => {
 							<i className="far fa-edit"></i>
 						</button>
 					) : (
-						<><CommentClapButton userId={userId} commentId={comment.id} /></>
+						<><CommentClapButton isAuthor={isAuthor} userId={userId} commentId={comment.id} /></>
 					)}
 				</div>
 				<p className="comment-content">{comment.comment}</p>

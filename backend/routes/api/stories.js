@@ -157,7 +157,7 @@ router.post(
 		await Clap.create({ storyId, userId });
 		const count = await Clap.count({ where: { storyId }});
 
-		res.json(count)
+		res.json(count);
 	})
 );
 

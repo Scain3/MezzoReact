@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { getCommentClaps } from "../../store/clap"
+import { getCommentClaps, clapComment } from "../../store/clap"
 
 import clap from "../../images/clap.svg";
 import "./commentClapButton.css"
 
-const CommentClapButton = ({ commentId, userId }) => {
+const CommentClapButton = ({ commentId, userId, isAuthor }) => {
     const [loaded, setLoaded] = useState(false);
     const [claps, setClaps] = useState(null);
     const dispatch = useDispatch();
@@ -19,7 +19,10 @@ const CommentClapButton = ({ commentId, userId }) => {
         })();
     }, [dispatch, commentId]);
 
-    const handleClick = () => {};
+    const handleClick = async () => {
+        const clapCount = await dispatch(clapComment(commentId, userId));
+        return setClaps(clapCount);
+    };
 
     return loaded && (
 			<>
