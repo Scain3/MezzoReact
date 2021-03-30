@@ -147,4 +147,18 @@ router.get(
 	})
 );
 
+router.post(
+	"/:id(\\d+)/clap",
+	asyncHandler(async (req, res) => {
+		const storyId = req.params.id;
+		const { userId } = req.body;
+
+		// Create clap, get and return updated count
+		await Clap.create({ storyId, userId });
+		const count = await Clap.count({ where: { storyId }});
+
+		res.json(count)
+	})
+);
+
 module.exports = router;

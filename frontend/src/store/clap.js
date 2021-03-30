@@ -13,6 +13,15 @@ export const getClaps = (storyId) => async (dispatch) => {
     return res;
 };
 
+export const clapStory = (storyId, userId) => async (dispatch) => {
+    const res = await fetch(`/api/stories/${storyId}/clap`, {
+        method: 'POST',
+        body: JSON.stringify({userId})
+    });
+    dispatch(setClaps(res.data));
+    return res;
+};
+
 const initialState = { claps: null };
 
 const clapReducer = (state = initialState, action) => {
