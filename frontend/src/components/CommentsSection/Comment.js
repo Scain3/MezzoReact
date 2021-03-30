@@ -43,17 +43,24 @@ const Comment = ({ comment, storyId }) => {
 						{`from ${comment.User.firstName} ${comment.User.lastName} on
 					${parseDate(comment.createdAt)}`}
 					</p>
-					{isAuthor ? (
-						<button
-							title="edit comment"
-							className="comment-edit-button"
-							onClick={() => setEditing(true)}
-						>
-							<i className="far fa-edit"></i>
-						</button>
-					) : (
-						<><CommentClapButton isAuthor={isAuthor} userId={userId} commentId={comment.id} /></>
-					)}
+					<div className="comment-header-controls">
+						{isAuthor ? (
+							<button
+								title="edit comment"
+								className="comment-edit-button"
+								onClick={() => setEditing(true)}
+							>
+								<i className="far fa-edit"></i>
+							</button>
+						) : (
+							<></>
+						)}
+						<CommentClapButton
+							isAuthor={isAuthor}
+							userId={userId}
+							commentId={comment.id}
+						/>
+					</div>
 				</div>
 				<p className="comment-content">{comment.comment}</p>
 			</div>

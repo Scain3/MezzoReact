@@ -24,6 +24,17 @@ const CommentClapButton = ({ commentId, userId, isAuthor }) => {
         return setClaps(clapCount);
     };
 
+    if (isAuthor) return (
+			loaded && (
+				<>
+					<button className="comment-clap-button-disabled">
+						<img className="comment-clap-button-icon" src={clap} alt="clap" />
+						<p className="comment-clap-button-clap-count">{claps}</p>
+					</button>
+				</>
+			)
+		);
+
     return loaded && (
 			<>
 				<button onClick={handleClick} className="comment-clap-button">
