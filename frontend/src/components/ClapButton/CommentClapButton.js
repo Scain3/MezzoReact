@@ -5,6 +5,9 @@ import clap from "../../images/clap.svg";
 import "./commentClapButton.css"
 
 const CommentClapButton = ({ commentId }) => {
+    const [loaded, setLoaded] = useState(false);
+    const [claps, setClaps] = useState(0);
+    
     return (
 			<>
 				<button className="comment-clap-button">
@@ -12,7 +15,7 @@ const CommentClapButton = ({ commentId }) => {
                     <p className="comment-clap-button-clap-count">5</p>
 				</button>
 			</>
-		);
-}
+	);
+};
 
 export default CommentClapButton;
