@@ -4,7 +4,7 @@ const { User, Comment, CommentClap } = require("../../db/models");
 
 const router = express.Router();
 
-// Update comment
+// UPDATE comment
 router.post(
 	"/:id(\\d+)/edit",
 	asyncHandler(async (req, res) => {
@@ -26,7 +26,7 @@ router.post(
 	})
 );
 
-// Destroy comment
+// DESTROY comment
 router.post(
 	"/:id(\\d+)/delete",
 	asyncHandler(async (req, res) => {
@@ -46,7 +46,7 @@ router.post(
 	})
 );
 
-// Get CommentClap count by comment
+// GET CommentClap count by comment
 router.get(
 	"/:id(\\d+)/claps",
 	asyncHandler(async (req, res) => {
@@ -58,7 +58,7 @@ router.get(
 	})
 );
 
-// Create CommentClap
+// CREATE CommentClap
 router.post(
 	"/:id(\\d+)/clap",
 	asyncHandler(async (req, res) => {

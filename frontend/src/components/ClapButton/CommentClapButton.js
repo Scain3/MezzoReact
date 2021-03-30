@@ -11,6 +11,7 @@ const CommentClapButton = ({ commentId, userId, isAuthor }) => {
     const [claps, setClaps] = useState(null);
     const dispatch = useDispatch();
 
+    // Used local state for this implementation
     useEffect(() => {
         (async () => {
             const clapCount = await dispatch(getCommentClaps(commentId));
@@ -24,6 +25,8 @@ const CommentClapButton = ({ commentId, userId, isAuthor }) => {
         return setClaps(clapCount);
     };
 
+    // If user is the author of the comment, return a dummy button
+    // allows you to see your own clap count, but not clap your own comment
     if (isAuthor) return (
 			loaded && (
 				<>
@@ -35,6 +38,7 @@ const CommentClapButton = ({ commentId, userId, isAuthor }) => {
 			)
 		);
 
+    // Returns the fully functional button
     return loaded && (
 			<>
 				<button onClick={handleClick} className="comment-clap-button">

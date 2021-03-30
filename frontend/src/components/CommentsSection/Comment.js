@@ -26,6 +26,8 @@ const Comment = ({ comment, storyId }) => {
 
 	// TODO: add link on name to profile page when feature is ready
 
+	// If the author clicks edit button, display the edit form
+	// in the comment's place
 	if (editing && isAuthor)
 		return (
 			<CommentEditForm

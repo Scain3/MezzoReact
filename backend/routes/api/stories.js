@@ -1,15 +1,12 @@
 const express = require("express");
-const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
-const { handleValidationErrors } = require("../../utils/validation");
-const { setTokenCookie, requireAuth } = require("../../utils/auth");
+
 const {
 	Story,
 	User,
 	Like,
 	Comment,
-	Follow,
 	Clap,
 	sequelize,
 } = require("../../db/models");
@@ -137,6 +134,7 @@ router.get(
 	})
 );
 
+// GET count of claps by story
 router.get(
 	"/:id(\\d+)/claps",
 	asyncHandler(async (req, res) => {
@@ -147,6 +145,7 @@ router.get(
 	})
 );
 
+// CREATE clap on story
 router.post(
 	"/:id(\\d+)/clap",
 	asyncHandler(async (req, res) => {
