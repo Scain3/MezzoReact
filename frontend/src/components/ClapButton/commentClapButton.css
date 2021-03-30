@@ -1,0 +1,21 @@
+.comment-clap-button {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comment-clap-button:hover > p {
+    text-decoration: underline;
+}
+
+.comment-clap-button-icon {
+    height: 20px;
+    width: auto;
+}
+
+.comment-clap-button-clap-count {
+    color: rgba(117, 117, 117, 1);
+    margin-left: 10px;
+}

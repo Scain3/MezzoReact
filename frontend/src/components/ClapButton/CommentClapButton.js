@@ -9,7 +9,7 @@ const CommentClapButton = ({ commentId }) => {
 			<>
 				<button className="comment-clap-button">
 					<img className="comment-clap-button-icon" src={clap} alt="clap" />
-                    <p className="comment-clap-button-clap-count"></p>
+                    <p className="comment-clap-button-clap-count">5</p>
 				</button>
 			</>
 		);
