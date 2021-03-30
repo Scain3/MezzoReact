@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { parseDate } from "../../utils";
 
 import CommentEditForm from "./CommentEditForm";
+import CommentClapButton from "../ClapButton/CommentClapButton";
 import "./comment.css";
 
 const Comment = ({ comment, storyId }) => {
@@ -55,6 +56,7 @@ const Comment = ({ comment, storyId }) => {
 					)}
 				</div>
 				<p className="comment-content">{comment.comment}</p>
+				{isAuthor ? (<></>) : (<CommentClapButton commentId={comment.id} />)}
 			</div>
 		)
 	);
