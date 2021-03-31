@@ -21,15 +21,19 @@
   font-family: 'Cormorant Garamond', serif;
   font-weight: bold;
   font-size: 40px;
+  margin: 20px;
 }
 
 .nav-links{
   display: flex;
-  justify-content: flex-end;
+  /* margin: 0 auto; */
+  /* justify-content: center; */
 }
 
 .login-modal-link, .signup-modal-link, .signup-link{
-  margin-left: 20px;
-  height: 75px;
+  /* margin-left: 20px;
+  margin-top: 20px; */
+  margin: 20px;
+  /* height: 75px; */
   font-family: 'Cormorant Garamond', serif;
 }
