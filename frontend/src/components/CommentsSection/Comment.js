@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { parseDate } from "../../utils";
 
 import CommentEditForm from "./CommentEditForm";
+import CommentClapButton from "../ClapButton/CommentClapButton";
 import "./comment.css";
 
 const Comment = ({ comment, storyId }) => {
@@ -25,6 +26,8 @@ const Comment = ({ comment, storyId }) => {
 
 	// TODO: add link on name to profile page when feature is ready
 
+	// If the author clicks edit button, display the edit form
+	// in the comment's place
 	if (editing && isAuthor)
 		return (
 			<CommentEditForm
@@ -42,17 +45,24 @@ const Comment = ({ comment, storyId }) => {
 						{`from ${comment.User.firstName} ${comment.User.lastName} on
 					${parseDate(comment.createdAt)}`}
 					</p>
-					{isAuthor ? (
-						<button
-							title="edit comment"
-							className="comment-edit-button"
-							onClick={() => setEditing(true)}
-						>
-							<i className="far fa-edit"></i>
-						</button>
-					) : (
-						<></>
-					)}
+					<div className="comment-header-controls">
+						{isAuthor ? (
+							<button
+								title="edit comment"
+								className="comment-edit-button"
+								onClick={() => setEditing(true)}
+							>
+								<i className="far fa-edit"></i>
+							</button>
+						) : (
+							<></>
+						)}
+						<CommentClapButton
+							isAuthor={isAuthor}
+							userId={userId}
+							commentId={comment.id}
+						/>
+					</div>
 				</div>
 				<p className="comment-content">{comment.comment}</p>
 			</div>

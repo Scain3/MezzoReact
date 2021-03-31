@@ -11,7 +11,11 @@ const CommentEditForm = ({ comment, setEditing, storyId }) => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+
+		// if no change has been made, do not bother updating the database
+		// limits calls
         if (comment.comment === editedComment) return setEditing(false);
+
         const body = {
             comment: editedComment,
             storyId
