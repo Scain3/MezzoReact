@@ -28,6 +28,10 @@
     margin: 10px;
 }
 
+.search-icon{
+    cursor: pointer;
+}
+
 .nav-search__submit{
     cursor: pointer;
     background: none;

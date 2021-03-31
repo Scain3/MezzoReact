@@ -26,7 +26,7 @@ function SearchBar(){
                  value={search}
             />
             <button>
-                <i className="fas fa-search fa-lg"></i>
+                <i className="fas fa-search fa-lg search-icon"></i>
             </button>
         </form>
     )
