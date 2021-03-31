@@ -13,7 +13,7 @@ function SearchPage(){
             searchInfo && searchInfo.map((search, index) => (
                 <div className="search-landing__container" >
                     <div className="centering-div">
-                        <div className="search-landing__author">{`${search.User.firstName} ${search.User.lastName}`}</div>
+                        <h3 className="search-landing__author">{`${search.User.firstName} ${search.User.lastName}`}</h3>
                         <img className="search-landing__image" src={search.image} alt={search.title}/>
                         <div onClick={()=>history.push(`/story/${search.id}`)} className="search-landing__title">{search.title}</div>
                         <div className="search-landing__subtitle">{search.subtitle}</div>
