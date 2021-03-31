@@ -59,6 +59,9 @@
 
 .search-landing__subtitle{
     margin: 0 auto;
+    color: #0000008A;
+    font-size: 24px;
+    font-family: sans-serif;
 }
 
 .search-landing__image{
@@ -70,5 +73,6 @@
 
 .search-landing__content{
     /* margin: 0 auto; */
-    width: 600px;
+    /* width: 600px; */
+    cursor: pointer;
 }
