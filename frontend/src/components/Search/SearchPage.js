@@ -18,7 +18,6 @@ function SearchPage(){
                         <div onClick={()=>history.push(`/story/${search.id}`)} className="search-landing__title">{search.title}</div>
                         <div className="search-landing__subtitle">{search.subtitle}</div>
                         <div className="search-landing__content" onClick={()=>history.push(`/story/${search.id}`)} >Read More...</div>
-                        {/* <p className="search-landing__content">{search.content}</p> */}
                     </div>
                 </div>
             ))
