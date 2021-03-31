@@ -1,5 +1,6 @@
 .nav-search__form{
     background-color: white;
+    margin: 10px;
 }
 
 .search-page__divs{
@@ -24,13 +25,14 @@
 .nav-search__input{
     border: none;
     background-color: white;
-    padding-bottom: 10px;
+    margin: 10px;
 }
 
 .nav-search__submit{
     cursor: pointer;
     background: none;
     border: none;
+    margin: 10px;
 }
 
 /* Search Landing Page */
