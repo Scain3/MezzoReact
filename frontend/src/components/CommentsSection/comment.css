@@ -11,12 +11,20 @@
     height: 20px;
 }
 
+.comment-header-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100px;
+}
+
 .comment-author-info {
 	color: rgba(117, 117, 117, 1);
 	font-size: 14px;
 }
 
 .comment-edit-button {
+    margin-right: 15px;
     font-size: 16px;
     cursor: pointer;
 }

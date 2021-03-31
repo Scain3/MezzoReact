@@ -1,10 +1,10 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { User, Comment } = require("../../db/models");
-
+const { User, Comment, CommentClap } = require("../../db/models");
 
 const router = express.Router();
 
+// UPDATE comment
 router.post(
 	"/:id(\\d+)/edit",
 	asyncHandler(async (req, res) => {
@@ -26,6 +26,7 @@ router.post(
 	})
 );
 
+// DESTROY comment
 router.post(
 	"/:id(\\d+)/delete",
 	asyncHandler(async (req, res) => {
@@ -42,6 +43,33 @@ router.post(
 			order: [["id", "DESC"]],
 		});
 		res.json(comments);
+	})
+);
+
+// GET CommentClap count by comment
+router.get(
+	"/:id(\\d+)/claps",
+	asyncHandler(async (req, res) => {
+		const commentId = req.params.id;
+
+		// Returns a count of CommentClaps associated with a Comment
+		const count = await CommentClap.count({ where: { commentId } });
+		res.json(count);
+	})
+);
+
+// CREATE CommentClap
+router.post(
+	"/:id(\\d+)/clap",
+	asyncHandler(async (req, res) => {
+		const commentId = req.params.id;
+		const { userId } = req.body;
+
+		// Create CommentClap, return new count
+		await CommentClap.create({ commentId, userId });
+
+		const count = await CommentClap.count({ where: { commentId } });
+		res.json(count);
 	})
 );
 

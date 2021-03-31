@@ -1,15 +1,12 @@
 const express = require("express");
-const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
-const { handleValidationErrors } = require("../../utils/validation");
-const { setTokenCookie, requireAuth } = require("../../utils/auth");
+
 const {
 	Story,
 	User,
 	Like,
 	Comment,
-	Follow,
 	Clap,
 	sequelize,
 } = require("../../db/models");
@@ -61,7 +58,7 @@ router.post(
 		const comments = await Comment.findAll({
 			where: { storyId },
 			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
-			order: [["id", "DESC"]]
+			order: [["id", "DESC"]],
 		});
 		res.json(comments);
 	})
@@ -111,7 +108,9 @@ router.get(
 		const stories = await Promise.all(
 			mostClapped.map(async (story) => {
 				story.dataValues.story = await Story.findByPk(story.storyId, {
-					include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
+					include: [
+						{ model: User, attributes: ["firstName", "lastName", "id"] },
+					],
 				});
 				return story;
 			})
@@ -129,9 +128,35 @@ router.get(
 		const comments = await Comment.findAll({
 			where: { storyId },
 			include: [{ model: User, attributes: ["firstName", "lastName", "id"] }],
-			order: [["id", "DESC"]]
+			order: [["id", "DESC"]],
 		});
 		res.json(comments);
+	})
+);
+
+// GET count of claps by story
+router.get(
+	"/:id(\\d+)/claps",
+	asyncHandler(async (req, res) => {
+		const storyId = req.params.id;
+		const count = await Clap.count({ where: { storyId } });
+
+		res.json(count);
+	})
+);
+
+// CREATE clap on story
+router.post(
+	"/:id(\\d+)/clap",
+	asyncHandler(async (req, res) => {
+		const storyId = req.params.id;
+		const { userId } = req.body;
+
+		// Create clap, get and return updated count
+		await Clap.create({ storyId, userId });
+		const count = await Clap.count({ where: { storyId }});
+
+		res.json(count);
 	})
 );
 

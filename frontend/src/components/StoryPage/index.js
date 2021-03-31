@@ -48,7 +48,7 @@ const StoryPage = () => {
 					<img className="story-page-image" src={`${story.image}`} alt="" />
 				</div>
 				{currentUser ? (
-					<LoggedInStory content={story.content} storyId={story.id} />
+					<LoggedInStory authorId={story.authorId} userId={currentUser.id} content={story.content} storyId={story.id} />
 				) : (
 					<LoggedOutStory content={story.content} />
 				)}

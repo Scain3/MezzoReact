@@ -5,6 +5,7 @@ import trendingReducer from './trending';
 import storyReducer from './story';
 import commentReducer from './comments';
 import searchReducer from './search';
+import clapReducer from './clap'
 
 const rootReducer = combineReducers({
   session,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   search: searchReducer,
   story: storyReducer,
   comments: commentReducer,
+  claps: clapReducer,
 });
 
 let enhancer;
