@@ -37,12 +37,12 @@
 
 .search-landing__container{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
 }
 
 .centering-div{
-    background-color: turquoise;
+    /* background-color: turquoise; */
     width: 50vw;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
     color: green;
     font-size: 16px;
     font-family: sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .search-landing__title{
@@ -64,6 +64,7 @@
     font-weight: bold;
     font-family: sans-serif;
     cursor: pointer;
+    text-align: left;
 }
 
 .search-landing__subtitle{
@@ -71,6 +72,7 @@
     color: #0000008A;
     font-size: 24px;
     font-family: sans-serif;
+    text-align: left;
 }
 
 .search-landing__image{
@@ -83,4 +85,6 @@
 .search-landing__content{
     margin: 0 auto;
     cursor: pointer;
+    text-align: left;
+    color: #0000008A;
 }
