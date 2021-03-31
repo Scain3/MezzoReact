@@ -32,7 +32,7 @@ const CommentsSectionContent = ({ storyId, comments, onClose }) => {
 };
 
 const CommentsSection = ({ storyId }) => {
-	const [openModal, setOpenModal] = useState(true);
+	const [openModal, setOpenModal] = useState(false);
 	const [loaded, setLoaded] = useState(false);
 	const comments = useSelector((state) => state.comments.comments);
 	const dispatch = useDispatch();
