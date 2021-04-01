@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, NavLink } from '../../context/Modal';
+import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import SignupForm from '../SignupFormModal/SignupForm'
 

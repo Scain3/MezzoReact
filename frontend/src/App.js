@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation";
 import StoryPage from "./components/StoryPage"
 import HomePage from "./components/HomePage";
 import SearchPage from "./components/Search/SearchPage";
+import StoryForm from "./components/StoryForm";
 
 // Redux
 import * as sessionActions from "./store/session";
@@ -26,6 +27,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/story/create">
+            <StoryForm />
+          </Route>
           <Route exact path="/story/:id">
             <StoryPage />
           </Route>
