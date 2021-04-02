@@ -1,4 +1,4 @@
-import React, { useState, useEffect, refs } from "react";
+import React, { useState, useEffect, refs, useRef } from "react";
 import {
 	Editor,
 	EditorState,
