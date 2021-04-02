@@ -2,7 +2,6 @@ import React from "react";
 
 import "./reset.css";
 import "./index.css";
-import "draft-js/dist/Draft.css";
 
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
