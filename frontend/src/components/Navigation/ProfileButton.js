@@ -29,9 +29,9 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
+    <div className="profile-button__container">
       <button className="profile-button" onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+        <img className="profile-photo" src="https://images.pexels.com/photos/3574678/pexels-photo-3574678.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile-photo" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
@@ -42,7 +42,7 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 
