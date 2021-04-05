@@ -1,5 +1,12 @@
 .profile-dropdown {
   position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right: 20px;
+  top: 100px;
 }
 
 .profile-button{
@@ -14,6 +21,7 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 
@@ -29,9 +37,17 @@
   display: flex;
 }
 
-.search-bar-div, .profile-button-div{
-  margin-left: 30px;
+.search-bar-div{
+  margin-right: -30px;
 }
+
+.profile-button-div{
+  margin-left: 50px;
+}
+
+/* .search-bar-div, .profile-button-div{
+  margin-left: 30px;
+} */
 
 .home-link{
   font-family: 'Cormorant Garamond', serif;
