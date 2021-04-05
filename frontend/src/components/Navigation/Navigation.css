@@ -2,21 +2,21 @@
   position: absolute;
 }
 
-.profile-button-div{
-  margin: 20px;
-  /* height: 60px;
-  width: 60px; */
+.profile-button{
+  /* margin: 20px; */
+  /* margin-bottom: 20px; */
+  margin-top: -20px;
+  height: 100px;
+  width: 100px;
 }
 
-/* i .fas .fa-user-circle{
-  height: 60px;
-  width: 60px;
-} */
+.profile-photo{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
 
-/* .profile-button{
-  height: 60px;
-  width: 60px;
-} */
+
 
 .nav-container{
   display: flex;

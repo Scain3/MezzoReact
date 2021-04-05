@@ -31,7 +31,7 @@ function ProfileButton({ user }) {
   return (
     <div className="profile-button__container">
       <button className="profile-button" onClick={openMenu}>
-        <img className="profile-photo" src="https://images.pexels.com/photos/3574678/pexels-photo-3574678.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile-photo" />
+        <img className="profile-photo" src="https://images.pexels.com/photos/4088812/pexels-photo-4088812.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile-photo" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
