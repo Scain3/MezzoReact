@@ -13,8 +13,8 @@ function LoginForm( {setSignup, greeting}) {
 
 	const demoLogin = () => {
 		const email = 'demo@user.com';
-		const password = hash;
-		return dispatch(login({email, password}))
+		const password = "Password123!";
+		return dispatch(login({credential: email, password}))
 			.catch((res) => {
 				if (res.data && res.data.errors) setErrors(res.data.errors);
 			});
