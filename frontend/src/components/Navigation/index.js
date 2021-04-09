@@ -7,6 +7,8 @@ import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import SearchBar from '../Search/SearchBar';
 
+
+
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
@@ -42,7 +44,8 @@ function Navigation({ isLoaded }){
   return (
     <ul className="nav-container">
       <li>
-        <NavLink className="home-link" exact to="/"><img src="../" alt="mezzo-logo"/></NavLink>
+        <NavLink className="home-link" exact to="/"><img src="../../../public/images/transparentmezzo.png" /></NavLink>
+
 
       </li>
       <li>
