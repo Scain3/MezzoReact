@@ -89,3 +89,8 @@
     font-weight: 600;
     cursor: pointer;
 }
+
+.demoLogin{
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}

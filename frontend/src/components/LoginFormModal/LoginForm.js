@@ -60,7 +60,7 @@ function LoginForm( {setSignup, greeting}) {
 				</div>
 				<button className="auth-submit-button" type="submit">Log In</button>
 				<p className="form-account-prompt">No account? <span onClick={() => setSignup(true)} className="login-link"> Create one</span></p>
-				<Link onClick={demoLogin}>Demo Login</Link>
+				<Link className="demoLogin" onClick={demoLogin}>Demo Login</Link>
 			</form>
 		</div>
 		</>
