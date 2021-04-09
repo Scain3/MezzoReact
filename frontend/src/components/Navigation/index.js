@@ -42,7 +42,7 @@ function Navigation({ isLoaded }){
   return (
     <ul className="nav-container">
       <li>
-        <NavLink className="home-link" exact to="/">Mezzo</NavLink>
+        <NavLink className="home-link" exact to="/"><img src="../" alt="mezzo-logo"/></NavLink>
 
       </li>
       <li>
