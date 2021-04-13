@@ -7,6 +7,7 @@ const Feed = () => {
     // temporary
     const feedArticles = useSelector((state) => state.trending.stories)
     const dispatch = useDispatch();
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -15,11 +16,11 @@ const Feed = () => {
         })();
     }, [dispatch]);
 
-    return (
+    return loaded && (
             <>
                 <h1>This is the feed</h1>
 
-                {articles.map((article) => (
+                {feedArticles.map((article) => (
 
                     <div className="feed-container">
                         <div className="feed-preview-container">
