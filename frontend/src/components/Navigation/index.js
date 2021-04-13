@@ -7,8 +7,11 @@ import SignupFormModal from '../SignupFormModal';
 import './Navigation.css';
 import SearchBar from '../Search/SearchBar';
 
+
+
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -42,6 +45,7 @@ function Navigation({ isLoaded }){
     <ul className="nav-container">
       <li>
         <NavLink className="home-link" exact to="/">Mezzo</NavLink>
+
 
       </li>
       <li>

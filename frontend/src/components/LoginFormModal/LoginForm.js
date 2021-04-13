@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 import "./LoginForm.css";
+import {login} from "../../store/session";
 
 function LoginForm( {setSignup, greeting}) {
 	const dispatch = useDispatch();
@@ -9,6 +11,14 @@ function LoginForm( {setSignup, greeting}) {
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 
+	const demoLogin = () => {
+		const email = 'demo@user.com';
+		const password = "Password123!";
+		return dispatch(login({credential: email, password}))
+			.catch((res) => {
+				if (res.data && res.data.errors) setErrors(res.data.errors);
+			});
+	  }
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -50,6 +60,7 @@ function LoginForm( {setSignup, greeting}) {
 				</div>
 				<button className="auth-submit-button" type="submit">Log In</button>
 				<p className="form-account-prompt">No account? <span onClick={() => setSignup(true)} className="login-link"> Create one</span></p>
+				<Link className="demoLogin" onClick={demoLogin}>Demo Login</Link>
 			</form>
 		</div>
 		</>
