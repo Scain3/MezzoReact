@@ -54,6 +54,12 @@
   margin: 20px;
 }
 
+.mezzo-logo{
+  height: 200px;
+  width: 400px;
+  margin-top: -115px;
+}
+
 .nav-links{
   display: flex;
 }
