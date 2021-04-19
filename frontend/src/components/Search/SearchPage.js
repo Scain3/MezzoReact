@@ -10,7 +10,6 @@ function SearchPage(){
     const searchInfo = useSelector(state => state.search.story);
     return(
         <div>
-            <h3>STORIES</h3>
             <div>{
                 searchInfo && searchInfo.map((search, index) => (
                     <div className="search-landing__container" >
